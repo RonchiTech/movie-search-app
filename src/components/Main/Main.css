@@ -1,0 +1,24 @@
+h2{
+    margin: 85px 0 0 80px;
+}
+.rec.rec-pagination{
+   display: none;
+}
+.tXlBS {
+  justify-content: start !important;
+}
+button {
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 50%;
+  outline: none;
+  margin: auto 20px;
+  height: 30px;
+  width: 30px;
+}
+button img {
+  margin: 3px 0 0 0;
+}
+button:hover {
+  background-color: #fff;
+}
