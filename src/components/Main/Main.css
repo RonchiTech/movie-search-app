@@ -1,11 +1,30 @@
-h2{
-    margin: 85px 0 0 80px;
+h2 {
+  margin: 85px 0 0 80px;
 }
-.rec.rec-pagination{
-   display: none;
+.MoviesContainer {
+  margin: 15px 55px;
+  position: relative;
+  height: 390px;
 }
-.tXlBS {
-  justify-content: start !important;
+.rec.rec-pagination {
+  display: none;
+}
+.rec-item-wrapper {
+  height: 420px;
+}
+/*
+.rec-slider-container {
+  text-align: center;
+} */
+/* .rec-carousel-item {
+ width: 300px;
+
+}
+.rec-slider-container {
+ width: 85%;
+} */
+.rec-item-wrapper {
+  height: 370px;
 }
 button {
   background-color: transparent;
@@ -21,4 +40,28 @@ button img {
 }
 button:hover {
   background-color: #fff;
+}
+.MovieContainer {
+  height: auto;
+  margin: auto 0;
+  align-items: center;
+  position: relative;
+}
+.MovieContainer:hover {
+  border: 1px solid white
+}
+.Card {
+  display: none;
+  margin: 0 auto;
+  width: 300px;
+  height: 150px;
+  border: 2px solid white;
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: -25%;
+  color: black;
+}
+.MovieContainer:hover .Card {
+  display: block;
 }

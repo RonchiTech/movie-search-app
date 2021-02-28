@@ -5,7 +5,8 @@ import BackArrow from '../../../assets/images/backarrow.svg';
 import ForwardArrow from '../../../assets/images/forwardarrow.svg';
 import '../Main.css';
 const Populars = () => {
-  const [topRateds, setTopRateds] = useState([]);
+  const [movies, setMovies] = useState([]);
+
 
   const myArrow = ({ type, onClick, isEdge }) => {
     const pointer =
@@ -36,38 +37,40 @@ const Populars = () => {
       )
       .then((response) => {
         console.log(response.data.results);
-        setTopRateds(response.data.results);
+        setMovies(response.data.results);
       })
       .catch((error) => {
         console.log(error);
       });
   }, []);
-  let display;
-  if (topRateds.length > 1) {
+
+  let display = null;
+  if (movies.length > 1) {
     display = (
-      <Carousel
-        showEmptySlots={false}
-        renderArrow={myArrow}
-        breakPoints={breakPoints}
-        itemPadding={[15, 0]}
-      >
-        {topRateds.map((movie) => {
-          return (
-            <img
-              key={movie.id}
-              src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
-              alt={movie.title}
-            />
-          );
-        })}
-      </Carousel>
+      <div className="MoviesContainer">
+        <h2>Popular</h2>
+        <Carousel
+          showEmptySlots={false}
+          renderArrow={myArrow}
+          breakPoints={breakPoints}
+          itemPadding={[15, 0]}
+        >
+          {movies.map((movie) => {
+            return (
+              <div className="MovieContainer" key={movie.id}>
+                <img
+                  className="Images"
+                  src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                  alt={movie.title}
+                />
+                <div className="Card">{movie.title}</div>
+              </div>
+            );
+          })}
+        </Carousel>
+      </div>
     );
   }
-  return (
-    <div>
-      <h2>Popular in Philippines</h2>
-      {display}
-    </div>
-  );
+  return <div>{display}</div>;
 };
 export default Populars;

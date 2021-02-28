@@ -4,7 +4,7 @@ import Carousel, { consts } from 'react-elastic-carousel';
 import BackArrow from '../../../assets/images/backarrow.svg';
 import ForwardArrow from '../../../assets/images/forwardarrow.svg';
 import '../Main.css';
-const TopRateds = () => {
+const Discover = () => {
   const [movies, setMovies] = useState([]);
 
   const myArrow = ({ type, onClick, isEdge }) => {
@@ -32,7 +32,7 @@ const TopRateds = () => {
   useEffect(() => {
     axios
       .get(
-        'https://api.themoviedb.org/3/movie/top_rated?api_key=9a30efb44012b0aec523edeec314b2d9&language=en-US&page=1&region=PH'
+        'https://api.themoviedb.org/3/discover/movie?api_key=9a30efb44012b0aec523edeec314b2d9&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1'
       )
       .then((response) => {
         console.log(response.data.results);
@@ -46,7 +46,7 @@ const TopRateds = () => {
   if (movies.length > 1) {
     display = (
       <div className="MoviesContainer">
-        <h2>Top Rated</h2>
+        <h2>Discover</h2>
         <Carousel
           showEmptySlots={false}
           renderArrow={myArrow}
@@ -71,4 +71,4 @@ const TopRateds = () => {
   }
   return <div>{display}</div>;
 };
-export default TopRateds;
+export default Discover;
