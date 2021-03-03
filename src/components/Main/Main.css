@@ -12,7 +12,7 @@ h2 {
 .rec-item-wrapper {
   height: 420px;
 }
-/*
+/* 
 .rec-slider-container {
   text-align: center;
 } */
@@ -67,12 +67,12 @@ button:hover {
   height: 0;
   background-color: white;
   position: absolute;
-  top: 0;
-  left: -25%;
+  transform: translateX(-20%) translateY(0);
   color: black;
   transition: all 0.85s ease;
 }
 .MovieContainer:hover .Card {
   width: 300px;
   height: 150px;
+  transform: translateX(-20%) translateY(-200%);
 }
