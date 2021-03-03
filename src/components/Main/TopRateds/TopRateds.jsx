@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from '../../../axios-orders';
 import Carousel, { consts } from 'react-elastic-carousel';
 import BackArrow from '../../../assets/images/backarrow.svg';
 import ForwardArrow from '../../../assets/images/forwardarrow.svg';
+import withErrrorHandler from '../../../hoc/withErrorHandler'
 import '../Main.css';
 const TopRateds = () => {
   const [movies, setMovies] = useState([]);
@@ -32,7 +33,7 @@ const TopRateds = () => {
   useEffect(() => {
     axios
       .get(
-        'https://api.themoviedb.org/3/movie/top_rated?api_key=9a30efb44012b0aec523edeec314b2d9&language=en-US&page=1&region=PH'
+        '/movie/top_rated?api_key=9a30efb44012b0aec523edeec314b2d9&language=en-US&page=1&region=PH'
       )
       .then((response) => {
         console.log(response.data.results);
@@ -71,4 +72,4 @@ const TopRateds = () => {
   }
   return <div>{display}</div>;
 };
-export default TopRateds;
+export default withErrrorHandler(TopRateds,axios);

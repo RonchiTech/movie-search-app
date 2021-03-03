@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import axios from '../../../axios-orders';
 import Carousel, { consts } from 'react-elastic-carousel';
 import BackArrow from '../../../assets/images/backarrow.svg';
 import ForwardArrow from '../../../assets/images/forwardarrow.svg';
+import withErrrorHandler from '../../../hoc/withErrorHandler';
 import '../Main.css';
 const Trendings = () => {
   const [movies, setMovies] = useState([]);
@@ -31,7 +32,7 @@ const Trendings = () => {
   useEffect(() => {
     axios
       .get(
-        'https://api.themoviedb.org/3/trending/all/week?api_key=9a30efb44012b0aec523edeec314b2d9'
+        '/trending/all/week?api_key=9a30efb44012b0aec523edeec314b2d9'
       )
       .then((response) => {
         console.log(response.data.results);
@@ -64,7 +65,7 @@ const Trendings = () => {
                   src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
                   alt={movie.title}
                 />
-                <div className="Card">{movie.title}</div>
+                <div className="Card">{movie.title || movie.name}</div>
               </div>
             );
           })}
@@ -74,4 +75,4 @@ const Trendings = () => {
   }
   return <div>{display}</div>;
 };
-export default Trendings;
+export default withErrrorHandler(Trendings,axios);
