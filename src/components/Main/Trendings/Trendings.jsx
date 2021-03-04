@@ -31,9 +31,7 @@ const Trendings = () => {
 
   useEffect(() => {
     axios
-      .get(
-        '/trending/all/week?api_key=9a30efb44012b0aec523edeec314b2d9'
-      )
+      .get('/trending/all/week?api_key=9a30efb44012b0aec523edeec314b2d9')
       .then((response) => {
         console.log(response.data.results);
         setMovies(response.data.results);
@@ -41,12 +39,10 @@ const Trendings = () => {
       .catch((error) => {
         console.log(error);
       });
- 
   }, []);
 
   let display = null;
-  
-  
+
   if (movies.length > 1) {
     display = (
       <div className="MoviesContainer">
@@ -65,7 +61,14 @@ const Trendings = () => {
                   src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
                   alt={movie.title}
                 />
-                <div className="Card">{movie.title || movie.name}</div>
+                <div className="Card">
+                  <img
+                    src={`https://image.tmdb.org/t/p/w300/${movie.backdrop_path}`}
+                    alt="Poster"
+                  />
+                  <h2 className='poster-name'>{movie.title || movie.name}</h2>
+                  <p>{movie.overview}</p>
+                </div>
               </div>
             );
           })}
@@ -75,4 +78,4 @@ const Trendings = () => {
   }
   return <div>{display}</div>;
 };
-export default withErrrorHandler(Trendings,axios);
+export default withErrrorHandler(Trendings, axios);

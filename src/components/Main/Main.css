@@ -25,6 +25,7 @@ h2 {
 } */
 .rec-item-wrapper {
   height: 370px;
+  overflow: visible !important;
 }
 button {
   background-color: transparent;
@@ -59,7 +60,7 @@ button:hover {
 
 .Card {
   display: block;
-  opacity: 1;
+  opacity: 0;
   overflow: hidden;
   height: 0;
   margin: 0 auto;
@@ -67,12 +68,18 @@ button:hover {
   height: 0;
   background-color: white;
   position: absolute;
-  transform: translateX(-20%) translateY(0);
+  transform: translateX(50px) translateY(-250px);
   color: black;
   transition: all 0.85s ease;
+  width: 100px;
+  height: 100px;
 }
 .MovieContainer:hover .Card {
+  opacity: 1;
   width: 300px;
-  height: 150px;
-  transform: translateX(-20%) translateY(-200%);
+  height: 350px;
+  transform: translateX(-50px) translateY(-310px);
+}
+.poster-name {
+  margin: 10px 15px;
 }
