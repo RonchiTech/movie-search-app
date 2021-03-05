@@ -4,6 +4,7 @@ import Carousel, { consts } from 'react-elastic-carousel';
 import BackArrow from '../../../assets/images/backarrow.svg';
 import ForwardArrow from '../../../assets/images/forwardarrow.svg';
 import withErrrorHandler from '../../../hoc/withErrorHandler';
+import Card from '../../../UI/Card/Card';
 import '../Main.css';
 const Populars = () => {
   const [movies, setMovies] = useState([]);
@@ -64,7 +65,12 @@ const Populars = () => {
                   src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
                   alt={movie.title}
                 />
-                <div className="Card">{movie.title}</div>
+                <Card
+                  src={`https://image.tmdb.org/t/p/w300/${movie.backdrop_path}`}
+                  alt="Poster"
+                  title_name={movie.title || movie.name}
+                  overview={movie.overview}
+                />
               </div>
             );
           })}

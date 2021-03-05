@@ -1,17 +1,15 @@
 h2 {
   margin: 85px 0 0 80px;
 }
-.MoviesContainer {
-  margin: 15px 55px;
-  position: relative;
-  height: 400px;
-}
+/* .MoviesContainer {
+  width: 100%;
+} */
 .rec.rec-pagination {
   display: none;
 }
-.rec-item-wrapper {
+/* .rec-item-wrapper {
   height: 420px;
-}
+} */
 /* 
 .rec-slider-container {
   text-align: center;
@@ -73,13 +71,30 @@ button:hover {
   transition: all 0.85s ease;
   width: 100px;
   height: 100px;
+  border-radius: 5px;
 }
 .MovieContainer:hover .Card {
   opacity: 1;
   width: 300px;
   height: 350px;
-  transform: translateX(-50px) translateY(-310px);
+  transform: translateX(-50px) translateY(-330px);
 }
 .poster-name {
-  margin: 10px 15px;
+  margin: 0;
+}
+.poster-name,
+.truncate {
+  padding: 10px 0 5px 10px;
+}
+.truncate {
+  display: inline-block;
+  width: 290px;
+  white-space: pre;
+  overflow: hidden;
+  text-overflow:ellipsis;
+}
+.truncate + a {
+  display: inline-block;
+  vertical-align: middle;
+  margin: -15px 0 0 10px;
 }

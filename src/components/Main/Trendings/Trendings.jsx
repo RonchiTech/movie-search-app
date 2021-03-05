@@ -4,6 +4,7 @@ import Carousel, { consts } from 'react-elastic-carousel';
 import BackArrow from '../../../assets/images/backarrow.svg';
 import ForwardArrow from '../../../assets/images/forwardarrow.svg';
 import withErrrorHandler from '../../../hoc/withErrorHandler';
+import Card from '../../../UI/Card/Card';
 import '../Main.css';
 const Trendings = () => {
   const [movies, setMovies] = useState([]);
@@ -21,7 +22,7 @@ const Trendings = () => {
     );
   };
   const breakPoints = [
-    { width: 320, itemsToShow: 1 },
+    { width: 320, itemsToShow: 1, itemsToScroll: 1 },
     { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
     { width: 850, itemsToShow: 3 },
     { width: 1150, itemsToShow: 4, itemsToScroll: 3 },
@@ -61,14 +62,12 @@ const Trendings = () => {
                   src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
                   alt={movie.title}
                 />
-                <div className="Card">
-                  <img
-                    src={`https://image.tmdb.org/t/p/w300/${movie.backdrop_path}`}
-                    alt="Poster"
-                  />
-                  <h2 className='poster-name'>{movie.title || movie.name}</h2>
-                  <p>{movie.overview}</p>
-                </div>
+                <Card
+                  src={`https://image.tmdb.org/t/p/w300/${movie.backdrop_path}`}
+                  alt="Poster"
+                  title_name={movie.title || movie.name}
+                  overview={movie.overview}
+                />
               </div>
             );
           })}
