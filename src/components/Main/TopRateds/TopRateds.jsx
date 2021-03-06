@@ -3,7 +3,7 @@ import axios from '../../../axios-orders';
 import Carousel, { consts } from 'react-elastic-carousel';
 import BackArrow from '../../../assets/images/backarrow.svg';
 import ForwardArrow from '../../../assets/images/forwardarrow.svg';
-import withErrrorHandler from '../../../hoc/withErrorHandler'
+import withErrrorHandler from '../../../hoc/withErrorHandler';
 import Card from '../../../UI/Card/Card';
 import '../Main.css';
 const TopRateds = () => {
@@ -48,7 +48,7 @@ const TopRateds = () => {
   if (movies.length > 1) {
     display = (
       <div className="MoviesContainer">
-        <h2>Top Rated</h2>
+        <h2 className="MovieContainter__Label">Top Rated</h2>
         <Carousel
           showEmptySlots={false}
           renderArrow={myArrow}
@@ -78,4 +78,4 @@ const TopRateds = () => {
   }
   return <div>{display}</div>;
 };
-export default withErrrorHandler(TopRateds,axios);
+export default withErrrorHandler(TopRateds, axios);

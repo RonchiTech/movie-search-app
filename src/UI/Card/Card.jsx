@@ -7,7 +7,7 @@ const card = ({ src, alt, title_name, overview }) => {
       <h2 className="poster-name">{title_name}</h2>
       <p>
         <span className="truncate">{overview}</span>
-        <Link>Read more</Link>
+        <Link to='/'>Read more</Link>
       </p>
     </div>
   );

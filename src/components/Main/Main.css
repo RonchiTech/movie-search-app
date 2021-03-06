@@ -1,4 +1,4 @@
-h2 {
+.MovieContainter__Label {
   margin: 85px 0 0 80px;
 }
 /* .MoviesContainer {
@@ -99,3 +99,28 @@ button:hover {
   margin: -15px 0 0 10px;
 }
 
+.featured-movie {
+  position: relative;
+}
+.featured-movie img {
+  width: 100%;
+  height: auto;
+  filter: opacity(55%);
+}
+.featured-movie__description {
+  position: absolute;
+  top: 35%;
+  left: 5%;
+}
+.featured-movie h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+}
+.featured-movie p {
+  font-size: 1.6rem;
+  width: 60%;
+  word-spacing: 1.2px;
+  line-height: 1.2;
+  text-justify: inter-word;
+  text-align: justify;
+}

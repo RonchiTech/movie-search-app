@@ -9,7 +9,6 @@ import '../Main.css';
 const Populars = () => {
   const [movies, setMovies] = useState([]);
 
-
   const myArrow = ({ type, onClick, isEdge }) => {
     const pointer =
       type === consts.PREV ? (
@@ -50,7 +49,7 @@ const Populars = () => {
   if (movies.length > 1) {
     display = (
       <div className="MoviesContainer">
-        <h2>Popular</h2>
+        <h2 className="MovieContainter__Label">Popular</h2>
         <Carousel
           showEmptySlots={false}
           renderArrow={myArrow}
@@ -80,4 +79,4 @@ const Populars = () => {
   }
   return <div>{display}</div>;
 };
-export default withErrrorHandler(Populars,axios);
+export default withErrrorHandler(Populars, axios);

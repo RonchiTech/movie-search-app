@@ -23,7 +23,7 @@ const Discover = () => {
     );
   };
   const breakPoints = [
-    { width: 320, itemsToShow: 1, itemsToScroll: 1},
+    { width: 320, itemsToShow: 1, itemsToScroll: 1 },
     { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
     { width: 850, itemsToShow: 3 },
     { width: 1150, itemsToShow: 4, itemsToScroll: 3 },
@@ -48,7 +48,7 @@ const Discover = () => {
   if (movies.length > 1) {
     display = (
       <div className="MoviesContainer">
-        <h2>Discover</h2>
+        <h2 className="MovieContainter__Label">Discover</h2>
         <Carousel
           showEmptySlots={false}
           renderArrow={myArrow}
@@ -78,4 +78,4 @@ const Discover = () => {
   }
   return <div>{display}</div>;
 };
-export default withErrrorHandler(Discover,axios);
+export default withErrrorHandler(Discover, axios);
