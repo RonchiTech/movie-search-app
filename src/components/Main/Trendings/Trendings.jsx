@@ -90,6 +90,12 @@ const Trendings = () => {
         <div className="featured-movie__description">
           <h2>{featuredMovie.title || featuredMovie.name}</h2>
           <p>{featuredMovie.overview}</p>
+          <a href="#" className='featured-movie__link-info'>More Info</a>
+        </div>
+        <div class="chevron-container">
+          <div class="chevron"></div>
+          <div class="chevron"></div>
+          <div class="chevron"></div>
         </div>
       </div>
       {/* {console.log(
