@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../../axios-orders';
+import '../../components/Main/Main.css'
 const MoreInfo = ({
   match: {
     params: { id },
@@ -21,23 +22,23 @@ const MoreInfo = ({
       });
   }, [id]);
   return (
-    <section
-      style={{
-        height: '80vh',
-        width: '100vw',
-      }}
-    >
+    <section className="movie-details">
       <div
+        className="movie-details__background"
         style={{
           backgroundImage: `url(https://image.tmdb.org/t/p/original/${movieDetails.backdrop_path})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center top',
-          height: '100%',
-          width: '100%',
         }}
       />
-      <p>{movieDetails.title || movieDetails.name}</p>
+      <h2 className="movie-details__title">
+        {movieDetails.title || movieDetails.name}
+        <span style={{
+            fontSize: '1rem'
+        }}>  {movieDetails.release_date}</span>
+      </h2>
+      <p className="movie-details__overview">{movieDetails.overview}</p>
     </section>
   );
 };

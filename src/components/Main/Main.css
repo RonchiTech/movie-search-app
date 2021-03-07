@@ -147,6 +147,22 @@ button:hover {
   text-decoration: underline;
   cursor: pointer;
 }
+.movie-details {
+  height: 80vh;
+  width: 100vw;
+}
+.movie-details__background {
+  height: 100%;
+  width: 100%;
+}
+.movie-details__title {
+  font-size: 4rem;
+}
+.movie-details__overview {
+  width: 50%;
+  text-align: justify;
+  font-size: 1.3rem;
+}
 .arrow-icon {
   width: 150px;
   padding: 5px 10px;
