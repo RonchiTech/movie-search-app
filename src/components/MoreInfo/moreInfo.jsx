@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from '../../axios-orders';
-import '../../components/Main/Main.css'
+import '../../components/Main/Main.scss'
 const MoreInfo = ({
   match: {
     params: { id },

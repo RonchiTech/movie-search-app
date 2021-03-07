@@ -9,7 +9,7 @@ import ForwardArrow from '../../../assets/images/forwardarrow.svg';
 import withErrrorHandler from '../../../hoc/withErrorHandler';
 
 import Card from '../../../UI/Card/Card';
-import '../Main.css';
+import '../Main.scss';
 
 
 const Trendings = () => {

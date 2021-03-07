@@ -5,7 +5,7 @@ import BackArrow from '../../../assets/images/backarrow.svg';
 import ForwardArrow from '../../../assets/images/forwardarrow.svg';
 import withErrrorHandler from '../../../hoc/withErrorHandler';
 import Card from '../../../UI/Card/Card';
-import '../Main.css';
+import '../Main.scss';
 const TopRateds = () => {
   const [movies, setMovies] = useState([]);
 
