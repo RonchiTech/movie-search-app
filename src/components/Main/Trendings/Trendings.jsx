@@ -1,11 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom'
 import axios from '../../../axios-orders';
+
 import Carousel, { consts } from 'react-elastic-carousel';
 import BackArrow from '../../../assets/images/backarrow.svg';
 import ForwardArrow from '../../../assets/images/forwardarrow.svg';
+
 import withErrrorHandler from '../../../hoc/withErrorHandler';
+
 import Card from '../../../UI/Card/Card';
 import '../Main.css';
+
+
 const Trendings = () => {
   const [featuredMovie, setFeaturedMovie] = useState({});
   const [movies, setMovies] = useState([]);
@@ -72,6 +78,7 @@ const Trendings = () => {
                   alt="Poster"
                   title_name={movie.title || movie.name}
                   overview={movie.overview}
+                  m_id={movie.id}
                 />
               </div>
             );
@@ -90,9 +97,12 @@ const Trendings = () => {
         <div className="featured-movie__description">
           <h2>{featuredMovie.title || featuredMovie.name}</h2>
           <p>{featuredMovie.overview}</p>
-          <a href="/" className="featured-movie__link-info">
+          <Link
+            to={`/more-info/${featuredMovie.id}`}
+            className="featured-movie__link-info"
+          >
             More Info
-          </a>
+          </Link>
         </div>
         <div className="chevron-container">
           <div className="chevron"></div>

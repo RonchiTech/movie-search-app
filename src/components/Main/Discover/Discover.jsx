@@ -68,6 +68,7 @@ const Discover = () => {
                   alt="Poster"
                   title_name={movie.title || movie.name}
                   overview={movie.overview}
+                  m_id={movie.id}
                 />
               </div>
             );
