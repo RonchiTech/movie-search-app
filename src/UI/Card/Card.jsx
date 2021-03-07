@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-
-const Card = ({ src, alt, title_name, overview, readingMore }) => {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faArrowAltCircleRight } from '@fortawesome/free-solid-svg-icons';
+const Card = ({ src, alt, title_name, overview }) => {
   const [readMore, setReadMore] = useState(false);
 
   const readMoreHandler = () => {
@@ -40,15 +41,21 @@ const Card = ({ src, alt, title_name, overview, readingMore }) => {
         <span className="truncate" style={truncateStyle}>
           {overview}
         </span>
-        <p
+        <span
           className="read-more"
           onClick={readMoreHandler}
           readingMore={readMore}
           style={paragraphStyle}
         >
           {readMore ? 'Read less' : 'Read more'}
-        </p>
+        </span>
       </p>
+      <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i>
+      <i class="fas fa-arrow-circle-right"></i>
+      <div className="arrow-icon">
+        <label>More info</label>
+        <FontAwesomeIcon icon={faArrowAltCircleRight} size="lg" />
+      </div>
     </div>
   );
 };
