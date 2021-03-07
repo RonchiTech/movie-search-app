@@ -54,7 +54,7 @@ const Card = ({ src, alt, title_name, overview, m_id }) => {
       <Link to={`/more-info/${m_id}`}>
         <div className="arrow-icon">
           <label>More info</label>
-          <FontAwesomeIcon icon={faArrowAltCircleRight} size="lg" />
+          <FontAwesomeIcon icon={faArrowAltCircleRight} size="lg" style={{}} />
         </div>
       </Link>
     </div>

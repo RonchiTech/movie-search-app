@@ -73,6 +73,9 @@ button:hover {
   height: 100px;
   border-radius: 5px;
 }
+.Card a {
+  text-decoration: none;
+}
 .MovieContainer:hover .Card {
   opacity: 1;
   width: 300px;
@@ -99,6 +102,7 @@ button:hover {
   width: 80%;
   margin: 15px auto;
   text-align: center;
+
 }
 
 .featured-movie {
@@ -169,7 +173,9 @@ button:hover {
   border: 2px solid black;
   border-radius: 15px;
 }
-.arrow-icon:hover {
+
+.arrow-icon:hover,
+.arrow-icon:hover label  {
   background-color: black;
   color: #fff;
   cursor: pointer;
@@ -177,6 +183,8 @@ button:hover {
 .arrow-icon label {
   margin-right: 10px;
   cursor: pointer;
+  color: black;
+  
 }
 .chevron-container {
   position: absolute;
