@@ -76,7 +76,8 @@ button:hover {
 .MovieContainer:hover .Card {
   opacity: 1;
   width: 300px;
-  height: 350px;
+  min-height: 350px;
+ 
   transform: translateX(-50px) translateY(-330px);
 }
 .poster-name {
@@ -86,18 +87,14 @@ button:hover {
 .truncate {
   padding: 10px 0 5px 10px;
 }
-.truncate {
+/* .truncate {
   display: inline-block;
   width: 95%;
   white-space: pre;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-.truncate + a {
-  display: inline-block;
-  vertical-align: middle;
-  margin: -15px 0 0 10px;
-}
+} */
+
 
 .featured-movie {
   position: relative;
@@ -138,6 +135,12 @@ button:hover {
   border: 2px solid #aca9a9;
   background-color: #aca9a9;
   color: white;
+}
+.read-more {
+  color: purple;
+  margin-left: 10px;
+  text-decoration: underline;
+  cursor: pointer;
 }
 .chevron-container {
   position: absolute;
